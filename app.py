@@ -163,9 +163,6 @@ if st.button("🔍 Analyze Sentiment", type="primary", use_container_width=True)
                 st.success(f"**Conclusion:** The {model_name} model predicts this review is **RECOMMENDED** with {confidence:.1f}% confidence. The passenger had a positive experience.")
             else:
                 st.error(f"**Conclusion:** The {model_name} model predicts this review is **NOT RECOMMENDED** with {100 - confidence:.1f}% confidence. The passenger had a negative experience.")
-                
-            with st.expander(" View Processed Text (Debug)"):
-                st.code(cleaned_text)
 
 # ==========================================
 # 5. Footer Information
