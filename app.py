@@ -109,7 +109,7 @@ with st.sidebar:
         st.session_state.sample_text = "Worst airline ever. The flight was delayed for hours, the seats were dirty and uncomfortable, and the staff was incredibly rude. Never flying again."
     
     st.markdown("---")
-    st.markdown("### 📊 Model Performance (Test Set)")
+    st.markdown("### 📊 Model Performance ")
     st.markdown("**Logistic Regression**")
     st.metric("Accuracy", "90.22%")
     st.metric("F1-Score", "0.90")
