@@ -89,7 +89,7 @@ def preprocess_text(text):
 # 4. Streamlit User Interface
 # ==========================================
 st.title("✈️ Airline Review Sentiment Analyzer")
-st.markdown("Enter an airline review below to predict whether a passenger would **Recommend** or **Not Recommend** the airline, based on our trained Machine Learning models.")
+st.markdown("Enter an airline review below to predict whether a passenger would **Recommend** or **Not Recommend** the airline.")
 
 # Sidebar for model selection and info
 with st.sidebar:
