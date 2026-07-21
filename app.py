@@ -42,8 +42,6 @@ download_nltk_data()
 # ==========================================
 @st.cache_resource
 def load_models():
-    # Note: Chi-Square selector is intentionally excluded here because the models 
-    # were trained on the full TF-IDF matrix, not the reduced feature set.
     tfidf = joblib.load('tfidf_vectorizer.pkl')
     lr_model = joblib.load('logistic_regression_model.pkl')
     nb_model = joblib.load('naive_bayes_model.pkl')
@@ -109,7 +107,7 @@ with st.sidebar:
         st.session_state.sample_text = "Worst airline ever. The flight was delayed for hours, the seats were dirty and uncomfortable, and the staff was incredibly rude. Never flying again."
     
     st.markdown("---")
-    st.markdown("### 📊 Model Performance ")
+    st.markdown("### 📊 Model Performance (Test Set)")
     st.markdown("**Logistic Regression**")
     st.metric("Accuracy", "90.22%")
     st.metric("F1-Score", "0.90")
@@ -168,14 +166,6 @@ if st.button("🔍 Analyze Sentiment", type="primary", use_container_width=True)
                 
             with st.expander(" View Processed Text (Debug)"):
                 st.code(cleaned_text)
-            
-            with st.expander("ℹ️ How It Works"):
-                st.markdown("""
-                1. **Text Cleaning**: Removes artifacts like "✅Trip Verified|", converts to lowercase, and removes special characters.
-                2. **Tokenization & Lemmatization**: Breaks text into words and reduces them to their base form (e.g., "flying" → "fly").
-                3. **TF-IDF Vectorization**: Converts text to numerical features based on word importance.
-                4. **Prediction**: Applies the trained machine learning model to determine recommendation status.
-                """)
 
 # ==========================================
 # 5. Footer Information
