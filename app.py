@@ -157,7 +157,7 @@ if st.button("🔍 Analyze Sentiment", type="primary", use_container_width=True)
                 st.metric("Prediction", prediction.upper())
             
             with col2:
-                st.metric("Confidence Score", f"{confidence:.1f}%")
+                st.metric("Recommended Score", f"{confidence:.1f}%")
             
             if prediction == 'yes':
                 st.success(f"**Conclusion:** The {model_name} model predicts this review is **RECOMMENDED** with {confidence:.1f}% confidence. The passenger had a positive experience.")
